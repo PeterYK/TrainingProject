@@ -14,6 +14,9 @@
 		E0135FC7215CCC3E006EA77F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0135FC5215CCC3E006EA77F /* LaunchScreen.storyboard */; };
 		E0135FD2215CCC3E006EA77F /* TrainingProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0135FD1215CCC3E006EA77F /* TrainingProjectTests.swift */; };
 		E0135FDD215CCC3E006EA77F /* TrainingProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0135FDC215CCC3E006EA77F /* TrainingProjectUITests.swift */; };
+		E0A9FEA22164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */; };
+		E0A9FEA52164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */; };
+		E0A9FEA72164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		E0135FD8215CCC3E006EA77F /* TrainingProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainingProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0135FDC215CCC3E006EA77F /* TrainingProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingProjectUITests.swift; sourceTree = "<group>"; };
 		E0135FDE215CCC3E006EA77F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPBothDirectionScrollCollectionViewContorller.swift; sourceTree = "<group>"; };
+		E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPBothDirectionScrollCollectionView.swift; sourceTree = "<group>"; };
+		E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TPBothDirectionScrollCollectionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		E0135FBB215CCC3D006EA77F /* TrainingProject */ = {
 			isa = PBXGroup;
 			children = (
+				E0A9FEA02164BFA500115C65 /* BothDirectionScrollCollectionView */,
 				E0135FBC215CCC3D006EA77F /* AppDelegate.swift */,
 				E0135FBE215CCC3D006EA77F /* ViewController.swift */,
 				E0135FC0215CCC3D006EA77F /* Main.storyboard */,
@@ -123,6 +130,24 @@
 				E0135FDE215CCC3E006EA77F /* Info.plist */,
 			);
 			path = TrainingProjectUITests;
+			sourceTree = "<group>";
+		};
+		E0A9FEA02164BFA500115C65 /* BothDirectionScrollCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */,
+				E0A9FEA32164CC3700115C65 /* Views */,
+			);
+			path = BothDirectionScrollCollectionView;
+			sourceTree = "<group>";
+		};
+		E0A9FEA32164CC3700115C65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */,
+				E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A9FEA72164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib in Resources */,
 				E0135FC7215CCC3E006EA77F /* LaunchScreen.storyboard in Resources */,
 				E0135FC4215CCC3E006EA77F /* Assets.xcassets in Resources */,
 				E0135FC2215CCC3D006EA77F /* Main.storyboard in Resources */,
@@ -256,6 +282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A9FEA52164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift in Sources */,
+				E0A9FEA22164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift in Sources */,
 				E0135FBF215CCC3D006EA77F /* ViewController.swift in Sources */,
 				E0135FBD215CCC3D006EA77F /* AppDelegate.swift in Sources */,
 			);
