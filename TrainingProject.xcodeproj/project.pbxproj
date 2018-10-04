@@ -17,6 +17,13 @@
 		E0A9FEA22164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */; };
 		E0A9FEA52164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */; };
 		E0A9FEA72164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */; };
+		E0A9FEAA216600D900115C65 /* TPJournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEA9216600D900115C65 /* TPJournalCell.swift */; };
+		E0A9FEAC2166013300115C65 /* TPJournalCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEAB2166013300115C65 /* TPJournalCellProtocol.swift */; };
+		E0A9FEAE2166051A00115C65 /* TPJournalCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEAD2166051A00115C65 /* TPJournalCellDelegate.swift */; };
+		E0A9FEB021660A8900115C65 /* TP1stStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEAF21660A8900115C65 /* TP1stStyleCell.swift */; };
+		E0A9FEB221660AAA00115C65 /* TP2ndStypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEB121660AAA00115C65 /* TP2ndStypeCell.swift */; };
+		E0A9FEB421660E8500115C65 /* TP2ndStypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A9FEB321660E8500115C65 /* TP2ndStypeCell.xib */; };
+		E0A9FEB621661A6500115C65 /* TP1stStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A9FEB521661A6500115C65 /* TP1stStyleCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,13 @@
 		E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPBothDirectionScrollCollectionViewContorller.swift; sourceTree = "<group>"; };
 		E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPBothDirectionScrollCollectionView.swift; sourceTree = "<group>"; };
 		E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TPBothDirectionScrollCollectionView.xib; sourceTree = "<group>"; };
+		E0A9FEA9216600D900115C65 /* TPJournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPJournalCell.swift; sourceTree = "<group>"; };
+		E0A9FEAB2166013300115C65 /* TPJournalCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPJournalCellProtocol.swift; sourceTree = "<group>"; };
+		E0A9FEAD2166051A00115C65 /* TPJournalCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPJournalCellDelegate.swift; sourceTree = "<group>"; };
+		E0A9FEAF21660A8900115C65 /* TP1stStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP1stStyleCell.swift; sourceTree = "<group>"; };
+		E0A9FEB121660AAA00115C65 /* TP2ndStypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP2ndStypeCell.swift; sourceTree = "<group>"; };
+		E0A9FEB321660E8500115C65 /* TP2ndStypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TP2ndStypeCell.xib; sourceTree = "<group>"; };
+		E0A9FEB521661A6500115C65 /* TP1stStyleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TP1stStyleCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */,
+				E0A9FEA82166008000115C65 /* Cells */,
 				E0A9FEA32164CC3700115C65 /* Views */,
 			);
 			path = BothDirectionScrollCollectionView;
@@ -148,6 +163,20 @@
 				E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E0A9FEA82166008000115C65 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E0A9FEA9216600D900115C65 /* TPJournalCell.swift */,
+				E0A9FEAB2166013300115C65 /* TPJournalCellProtocol.swift */,
+				E0A9FEAD2166051A00115C65 /* TPJournalCellDelegate.swift */,
+				E0A9FEAF21660A8900115C65 /* TP1stStyleCell.swift */,
+				E0A9FEB521661A6500115C65 /* TP1stStyleCell.xib */,
+				E0A9FEB121660AAA00115C65 /* TP2ndStypeCell.swift */,
+				E0A9FEB321660E8500115C65 /* TP2ndStypeCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +285,8 @@
 			files = (
 				E0A9FEA72164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib in Resources */,
 				E0135FC7215CCC3E006EA77F /* LaunchScreen.storyboard in Resources */,
+				E0A9FEB621661A6500115C65 /* TP1stStyleCell.xib in Resources */,
+				E0A9FEB421660E8500115C65 /* TP2ndStypeCell.xib in Resources */,
 				E0135FC4215CCC3E006EA77F /* Assets.xcassets in Resources */,
 				E0135FC2215CCC3D006EA77F /* Main.storyboard in Resources */,
 			);
@@ -283,6 +314,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0A9FEA52164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift in Sources */,
+				E0A9FEAC2166013300115C65 /* TPJournalCellProtocol.swift in Sources */,
+				E0A9FEAE2166051A00115C65 /* TPJournalCellDelegate.swift in Sources */,
+				E0A9FEAA216600D900115C65 /* TPJournalCell.swift in Sources */,
+				E0A9FEB021660A8900115C65 /* TP1stStyleCell.swift in Sources */,
+				E0A9FEB221660AAA00115C65 /* TP2ndStypeCell.swift in Sources */,
 				E0A9FEA22164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift in Sources */,
 				E0135FBF215CCC3D006EA77F /* ViewController.swift in Sources */,
 				E0135FBD215CCC3D006EA77F /* AppDelegate.swift in Sources */,
