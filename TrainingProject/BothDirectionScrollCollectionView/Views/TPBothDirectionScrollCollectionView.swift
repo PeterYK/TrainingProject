@@ -15,6 +15,9 @@ class TPBothDirectionScrollCollectionView: UIView {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var months: UICollectionView!
     @IBOutlet weak var schedules: UICollectionView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var heightConstr: NSLayoutConstraint!
+    @IBOutlet weak var widthConstr: NSLayoutConstraint!
     
     var numberOfRows = 0
     var numberOfColumns = 0
@@ -49,6 +52,10 @@ class TPBothDirectionScrollCollectionView: UIView {
         let rect = scrollView.bounds
         scrollView.contentSize = CGSize.init(width: rect.width, height: CGFloat(numberOfRows * 100))
         scrollView.bounces = false
+        heightConstr.constant = CGFloat(numberOfRows * 100)
+        widthConstr.constant = rect.width
+        let newFrame = CGRect.init(origin: .zero, size: scrollView.contentSize)
+        contentView.frame = newFrame
     }
     
     func setupBothScrollCollectionView() {
