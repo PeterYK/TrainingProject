@@ -66,6 +66,7 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="4DL-aJ-Ppm" firstAttribute="width" secondItem="m3Z-bB-FSV" secondAttribute="width" id="9Bf-5Q-GFU"/>
                         <constraint firstItem="4DL-aJ-Ppm" firstAttribute="leading" secondItem="m3Z-bB-FSV" secondAttribute="leading" id="C2Y-Nl-27Z"/>
                         <constraint firstItem="4DL-aJ-Ppm" firstAttribute="top" secondItem="m3Z-bB-FSV" secondAttribute="top" id="ctE-FO-RcB"/>
                     </constraints>
