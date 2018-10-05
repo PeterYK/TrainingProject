@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainingProject/BothDirectionScrollCollectionView/Views/TPBothDirectionScrollCollectionView.swift"
-            timestampString = "560419002.144678"
+            timestampString = "560421229.19938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainingProject/BothDirectionScrollCollectionView/Views/TPBothDirectionScrollCollectionView.swift"
-            timestampString = "560419002.14508"
+            timestampString = "560421229.200382"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "TPBothDirectionScrollCollectionView"
             landmarkType = "21">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainingProject/BothDirectionScrollCollectionView/Views/TPBothDirectionScrollCollectionView.swift"
-            timestampString = "560419002.145201"
+            timestampString = "560421229.200887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainingProject/BothDirectionScrollCollectionView/Views/TPBothDirectionScrollCollectionView.swift"
-            timestampString = "560419002.1452889"
+            timestampString = "560421229.201304"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -82,43 +82,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainingProject/BothDirectionScrollCollectionView/Views/TPBothDirectionScrollCollectionView.swift"
-            timestampString = "560419002.1453739"
+            timestampString = "560421229.201701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "setupBothScrollCollectionView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrainingProject/BothDirectionScrollCollectionView/Views/TPBothDirectionScrollCollectionView.swift"
-            timestampString = "560419002.14545"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "setupBothScrollCollectionView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrainingProject/BothDirectionScrollCollectionView/Views/TPBothDirectionScrollCollectionView.swift"
-            timestampString = "560419002.145519"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "setupScrollView()"
             landmarkType = "7">
          </BreakpointContent>

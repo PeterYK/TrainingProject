@@ -12,13 +12,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TPBothDirectionScrollCollectionView" customModule="TrainingProject" customModuleProvider="target">
             <connections>
                 <outlet property="BothScrollCollectionView" destination="1zT-IA-SBP" id="kfE-yR-ss5"/>
+                <outlet property="contentHeight" destination="oTn-q8-8Y8" id="uU1-jK-Dxg"/>
                 <outlet property="contentView" destination="4DL-aJ-Ppm" id="Xp0-Tc-O9Q"/>
-                <outlet property="heightConstr" destination="SDh-Cx-Ga9" id="gZV-MG-vRS"/>
                 <outlet property="months" destination="Ewt-Zz-7dd" id="yXx-rM-8pP"/>
                 <outlet property="schedules" destination="8Iv-rz-agJ" id="du4-dH-gmw"/>
                 <outlet property="scrollView" destination="m3Z-bB-FSV" id="0H9-u2-LGN"/>
                 <outlet property="tableView" destination="20L-UX-i3r" id="KsW-he-qiP"/>
-                <outlet property="widthConstr" destination="i4H-5g-yNg" id="CMf-wa-Hil"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -26,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m3Z-bB-FSV">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3Z-bB-FSV">
                     <rect key="frame" x="0.0" y="120" width="758" height="894"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DL-aJ-Ppm">
@@ -55,8 +54,7 @@
                                 <constraint firstAttribute="bottom" secondItem="1zT-IA-SBP" secondAttribute="bottom" id="7k5-aw-dhh"/>
                                 <constraint firstItem="20L-UX-i3r" firstAttribute="leading" secondItem="4DL-aJ-Ppm" secondAttribute="leading" id="AK0-fq-ES7"/>
                                 <constraint firstAttribute="trailing" secondItem="1zT-IA-SBP" secondAttribute="trailing" id="HQG-Yn-Mcx"/>
-                                <constraint firstAttribute="height" constant="894" id="SDh-Cx-Ga9"/>
-                                <constraint firstAttribute="width" constant="758" id="i4H-5g-yNg"/>
+                                <constraint firstAttribute="height" constant="894" id="oTn-q8-8Y8"/>
                                 <constraint firstItem="20L-UX-i3r" firstAttribute="top" secondItem="4DL-aJ-Ppm" secondAttribute="top" id="rDb-sK-nEc"/>
                                 <constraint firstItem="1zT-IA-SBP" firstAttribute="leading" secondItem="20L-UX-i3r" secondAttribute="trailing" priority="500" constant="5" id="rq7-7n-lyD"/>
                                 <constraint firstAttribute="bottom" secondItem="20L-UX-i3r" secondAttribute="bottom" id="th6-KY-v8a"/>
@@ -66,9 +64,11 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="4DL-aJ-Ppm" firstAttribute="width" secondItem="m3Z-bB-FSV" secondAttribute="width" id="9Bf-5Q-GFU"/>
-                        <constraint firstItem="4DL-aJ-Ppm" firstAttribute="leading" secondItem="m3Z-bB-FSV" secondAttribute="leading" id="C2Y-Nl-27Z"/>
-                        <constraint firstItem="4DL-aJ-Ppm" firstAttribute="top" secondItem="m3Z-bB-FSV" secondAttribute="top" id="ctE-FO-RcB"/>
+                        <constraint firstItem="4DL-aJ-Ppm" firstAttribute="width" secondItem="m3Z-bB-FSV" secondAttribute="width" priority="250" id="8p3-fZ-8Ci"/>
+                        <constraint firstAttribute="trailing" secondItem="4DL-aJ-Ppm" secondAttribute="trailing" id="IrK-qV-ATQ"/>
+                        <constraint firstItem="4DL-aJ-Ppm" firstAttribute="leading" secondItem="m3Z-bB-FSV" secondAttribute="leading" id="QEd-c3-apO"/>
+                        <constraint firstItem="4DL-aJ-Ppm" firstAttribute="top" secondItem="m3Z-bB-FSV" secondAttribute="top" id="yXP-Hv-JqI"/>
+                        <constraint firstAttribute="bottom" secondItem="4DL-aJ-Ppm" secondAttribute="bottom" id="zga-Zi-lON"/>
                     </constraints>
                 </scrollView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ewt-Zz-7dd" userLabel="MonthColView">
