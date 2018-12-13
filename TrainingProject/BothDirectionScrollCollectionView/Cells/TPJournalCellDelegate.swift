@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol TPJournalCellDelegate {
+protocol TPJournalCellDelegate: class {
     func didTapJournalCell(cell: TPJournalCell)
 }

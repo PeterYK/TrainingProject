@@ -18,6 +18,9 @@ class TPBothDirectionScrollCollectionView: UIView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentHeight: NSLayoutConstraint!
     
+    weak var journalCelldelegate:TPJournalCellDelegate?
+    weak var scheduleCelldelegate:TPJournalScheduleIPADCellDelegate?
+
     var numberOfRows = 0
     var numberOfColumns = 0
     // MARK: init
@@ -103,8 +106,15 @@ class TPBothDirectionScrollCollectionView: UIView {
 extension TPBothDirectionScrollCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == bothScrollCollectionView {
-            if let cell = collectionView.cellForItem(at: indexPath) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? TP1stStyleCell {
                 cell.backgroundColor = UIColor.yellow
+                if self.journalCelldelegate != nil {
+                    self.journalCelldelegate?.didTapJournalCell(cell: cell)
+                }
+            } else if let cell = collectionView.cellForItem(at: indexPath) as? TPJournalScheduleIPADCell{
+                if self.scheduleCelldelegate != nil {
+                    self.scheduleCelldelegate?.didTapJournalScheduleCell(cell: cell)
+                }
             }
         }
     }
@@ -112,15 +122,11 @@ extension TPBothDirectionScrollCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == bothScrollCollectionView {
             if let cell = collectionView.cellForItem(at: indexPath) {
-                if indexPath.row / numberOfRows % 2 == 0 {
-                    cell.backgroundColor = UIColor.gray
-                } else {
-                    cell.backgroundColor = UIColor.lightGray
-                }
+                cell.backgroundColor = UIColor.lightGray
             }
         }
     }
-    
+        
 }
 
 extension TPBothDirectionScrollCollectionView: UICollectionViewDataSource {
@@ -136,15 +142,9 @@ extension TPBothDirectionScrollCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == bothScrollCollectionView {
-            if indexPath.row / numberOfRows % 2 == 0 {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TP2ndStypeCell.idCell(), for: indexPath)
-                cell.backgroundColor = UIColor.gray
-                return cell
-            } else {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TP1stStyleCell.idCell(), for: indexPath)
-                cell.backgroundColor = UIColor.lightGray
-                return cell
-            }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TP1stStyleCell.idCell(), for: indexPath)
+            cell.backgroundColor = UIColor.lightGray
+            return cell
         } else if collectionView == months {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "monthCell", for: indexPath)
             
@@ -204,6 +204,9 @@ extension TPBothDirectionScrollCollectionView: UITableViewDataSource, UITableVie
         return 100
     }
     
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
 }
 
 extension TPBothDirectionScrollCollectionView: UIScrollViewDelegate {

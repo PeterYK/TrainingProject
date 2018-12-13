@@ -24,3 +24,4 @@ class TP1stStyleCell: TPJournalCell {
         isFinalMarkCell = false
     }
 }
+

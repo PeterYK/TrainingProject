@@ -15,6 +15,7 @@ class TPBothDirectionScrollCollectionViewContorller: UIViewController {
         super.loadView()
         let rect = CGRect.init(origin: CGPoint.zero, size: self.view.frame.size)
         mainView = TPBothDirectionScrollCollectionView.init(frame: rect)
+        self.setupMainView()
         self.view.addSubview(mainView)
     }
     
@@ -23,5 +24,21 @@ class TPBothDirectionScrollCollectionViewContorller: UIViewController {
         //конфигурация журнала
         self.view.backgroundColor = UIColor.white
 
+    }
+    private func setupMainView(){
+        mainView.journalCelldelegate = self
+        mainView.scheduleCelldelegate = self
+    }
+}
+
+extension TPBothDirectionScrollCollectionViewContorller: TPJournalCellDelegate {
+    func didTapJournalCell(cell: TPJournalCell) {
+        print("cell did tap")
+    }
+}
+
+extension TPBothDirectionScrollCollectionViewContorller: TPJournalScheduleIPADCellDelegate {
+    func didTapJournalScheduleCell(cell: TPJournalScheduleIPADCell) {
+        print("schedule did tap")
     }
 }

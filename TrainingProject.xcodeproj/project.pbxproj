@@ -24,6 +24,9 @@
 		E0A9FEB221660AAA00115C65 /* TP2ndStypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEB121660AAA00115C65 /* TP2ndStypeCell.swift */; };
 		E0A9FEB421660E8500115C65 /* TP2ndStypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A9FEB321660E8500115C65 /* TP2ndStypeCell.xib */; };
 		E0A9FEB621661A6500115C65 /* TP1stStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A9FEB521661A6500115C65 /* TP1stStyleCell.xib */; };
+		E0C759B221C2A03500D76871 /* TPJournalScheduleIPADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C759B121C2A03500D76871 /* TPJournalScheduleIPADCell.swift */; };
+		E0C759B421C2A50200D76871 /* TPJournalScheduleIPADCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C759B321C2A50200D76871 /* TPJournalScheduleIPADCellDelegate.swift */; };
+		E0C759B621C2AAD400D76871 /* TPJournalScheduleIPADCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C759B521C2AAD400D76871 /* TPJournalScheduleIPADCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		E0A9FEB121660AAA00115C65 /* TP2ndStypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP2ndStypeCell.swift; sourceTree = "<group>"; };
 		E0A9FEB321660E8500115C65 /* TP2ndStypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TP2ndStypeCell.xib; sourceTree = "<group>"; };
 		E0A9FEB521661A6500115C65 /* TP1stStyleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TP1stStyleCell.xib; sourceTree = "<group>"; };
+		E0C759B121C2A03500D76871 /* TPJournalScheduleIPADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPJournalScheduleIPADCell.swift; sourceTree = "<group>"; };
+		E0C759B321C2A50200D76871 /* TPJournalScheduleIPADCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPJournalScheduleIPADCellDelegate.swift; sourceTree = "<group>"; };
+		E0C759B521C2AAD400D76871 /* TPJournalScheduleIPADCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TPJournalScheduleIPADCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,9 @@
 				E0A9FEB521661A6500115C65 /* TP1stStyleCell.xib */,
 				E0A9FEB121660AAA00115C65 /* TP2ndStypeCell.swift */,
 				E0A9FEB321660E8500115C65 /* TP2ndStypeCell.xib */,
+				E0C759B121C2A03500D76871 /* TPJournalScheduleIPADCell.swift */,
+				E0C759B321C2A50200D76871 /* TPJournalScheduleIPADCellDelegate.swift */,
+				E0C759B521C2AAD400D76871 /* TPJournalScheduleIPADCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -289,6 +298,7 @@
 				E0A9FEB421660E8500115C65 /* TP2ndStypeCell.xib in Resources */,
 				E0135FC4215CCC3E006EA77F /* Assets.xcassets in Resources */,
 				E0135FC2215CCC3D006EA77F /* Main.storyboard in Resources */,
+				E0C759B621C2AAD400D76871 /* TPJournalScheduleIPADCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +330,9 @@
 				E0A9FEB021660A8900115C65 /* TP1stStyleCell.swift in Sources */,
 				E0A9FEB221660AAA00115C65 /* TP2ndStypeCell.swift in Sources */,
 				E0A9FEA22164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift in Sources */,
+				E0C759B421C2A50200D76871 /* TPJournalScheduleIPADCellDelegate.swift in Sources */,
 				E0135FBF215CCC3D006EA77F /* ViewController.swift in Sources */,
+				E0C759B221C2A03500D76871 /* TPJournalScheduleIPADCell.swift in Sources */,
 				E0135FBD215CCC3D006EA77F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
