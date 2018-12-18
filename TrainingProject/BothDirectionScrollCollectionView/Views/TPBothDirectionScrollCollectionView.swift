@@ -14,15 +14,15 @@ class TPBothDirectionScrollCollectionView: UIView {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var months: UICollectionView!
-    @IBOutlet weak var schedules: UICollectionView!
+    @IBOutlet weak var schedules: TPSchedulesCollectionView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentHeight: NSLayoutConstraint!
-    
+
     weak var journalCelldelegate:TPJournalCellDelegate?
     weak var scheduleCelldelegate:TPJournalScheduleIPADCellDelegate?
 
+    var schedulesItems:[Int]?
     var numberOfRows = 0
-    var numberOfColumns = 0
     // MARK: init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,8 +40,8 @@ class TPBothDirectionScrollCollectionView: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        schedulesItems = [12, 243, 5532 ,234234, 453, 23, 867, 53, 7856, 23, 45, 67, 423 ,23, 8, 45, 243, 24353, 23, 13, 978, 486 ,3543 ,918 ,546 ,456]
         numberOfRows = 20
-        numberOfColumns = 15
         setupScrollView()
         setupTableView()
         setupMonth()
@@ -89,9 +89,10 @@ class TPBothDirectionScrollCollectionView: UIView {
         let collectionViewOrigin = CGPoint.init(x: 260, y: 60)
         let rect = CGRect.init(origin: collectionViewOrigin, size: collectionViewSize)
         schedules.frame = rect
-        schedules.delegate = self as UICollectionViewDelegate
-        schedules.dataSource = self as UICollectionViewDataSource
-        schedules.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "schedulCell")
+        schedules.delegate = self
+        schedules.dataSource = self
+        let nimbCellUsual = UINib(nibName: TPJournalScheduleIPADCell.idCell, bundle: nil)
+        schedules.register(nimbCellUsual, forCellWithReuseIdentifier: TPJournalScheduleIPADCell.idCell)
         schedules.bounces = false
     }
 
@@ -131,12 +132,15 @@ extension TPBothDirectionScrollCollectionView: UICollectionViewDelegate {
 
 extension TPBothDirectionScrollCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let items = self.schedulesItems else {
+            return 0
+        }
         if collectionView == bothScrollCollectionView {
-            return numberOfRows * numberOfColumns
+            return numberOfRows * items.count
         }  else if collectionView == months {
-            return numberOfColumns / 3
+            return items.count / 3
         } else {
-            return numberOfColumns
+            return items.count
         }
     }
     
@@ -151,8 +155,7 @@ extension TPBothDirectionScrollCollectionView: UICollectionViewDataSource {
             cell.backgroundColor = UIColor.green
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "schedulCell", for: indexPath)
-            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TPJournalScheduleIPADCell.idCell, for: indexPath)
             cell.backgroundColor = UIColor.purple
             return cell
         }

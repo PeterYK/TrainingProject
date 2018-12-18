@@ -10,20 +10,34 @@ import Foundation
 import UIKit
 
 class TPJournalScheduleIPADCell: UICollectionViewCell {
-    var scheduleId: Int
+    var scheduleId: Int?
     @IBOutlet weak var scheduleTitle: UILabel!
-    
-    init(scheduleId: Int) {
-        super.awakeFromNib()
-        self.scheduleId = scheduleId
+    class var idCell: String {
+        return "TPJournalScheduleIPADCell"
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-//        setupSelf()
+        setupSelf()
+    }
+    
+    public func setSchedulId(scheduleId: Int) {
+        self.scheduleId = scheduleId
+        self.updateScheduleTitle()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
+    
+    private func setupSelf() {
+        self.scheduleTitle.text = "Empty"
+    }
+    private func updateScheduleTitle(){
+        guard let id = self.scheduleId else {
+            self.scheduleTitle.text = "Empty"
+            return
+        }
+        self.scheduleTitle.text = "\(id)"
+    }
+
 }
