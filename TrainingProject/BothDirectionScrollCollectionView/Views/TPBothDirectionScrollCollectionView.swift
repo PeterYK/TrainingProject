@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class TPBothDirectionScrollCollectionView: UIView {
-    @IBOutlet weak var bothScrollCollectionView: UICollectionView!
+    @IBOutlet weak var bothScrollCollectionView: NormalMarkCollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var months: UICollectionView!
@@ -20,9 +20,10 @@ class TPBothDirectionScrollCollectionView: UIView {
 
     weak var journalCelldelegate:TPJournalCellDelegate?
     weak var scheduleCelldelegate:TPJournalScheduleIPADCellDelegate?
-
-    var schedulesItems:[Int]?
-    var numberOfRows = 0
+    
+    var config = JournalConfiguration()
+//    var schedulesItems:[Int]?
+//    var numberOfRows = 0
     // MARK: init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,8 +41,7 @@ class TPBothDirectionScrollCollectionView: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        schedulesItems = [12, 243, 5532 ,234234, 453, 23, 867, 53, 7856, 23, 45, 67, 423 ,23, 8, 45, 243, 24353, 23, 13, 978, 486 ,3543 ,918 ,546 ,456]
-        numberOfRows = 20
+        config.setupSelf()
         setupScrollView()
         setupTableView()
         setupMonth()
@@ -52,10 +52,8 @@ class TPBothDirectionScrollCollectionView: UIView {
     
     func setupScrollView() {
         let rect = scrollView.bounds
-        scrollView.contentSize = CGSize.init(width: rect.width, height: CGFloat(numberOfRows * 100))
+        scrollView.contentSize = CGSize.init(width: rect.width, height: CGFloat(config.students.count * 100))
         scrollView.bounces = false
-//        let newFrame = CGRect.init(origin: .zero, size: scrollView.contentSize)
-//        contentView.frame = newFrame
         contentHeight.constant = scrollView.contentSize.height
     }
     
@@ -63,14 +61,9 @@ class TPBothDirectionScrollCollectionView: UIView {
         let collectionViewSize = scrollView.contentSize
         let collectionViewOrigin = CGPoint.init(x: 250, y: 0)
         let rect = CGRect.init(origin: collectionViewOrigin, size: collectionViewSize)
-        bothScrollCollectionView.frame = rect
-        bothScrollCollectionView.delegate = self as UICollectionViewDelegate
-        bothScrollCollectionView.dataSource = self as UICollectionViewDataSource
-        let nibCell2nd = UINib(nibName: "TP2ndStypeCell", bundle: nil)
-        bothScrollCollectionView.register(nibCell2nd, forCellWithReuseIdentifier: TP2ndStypeCell.idCell())
-        let nibCell1st = UINib(nibName: "TP1stStyleCell", bundle: nil)
-        bothScrollCollectionView.register(nibCell1st, forCellWithReuseIdentifier: TP1stStyleCell.idCell())
-        bothScrollCollectionView.bounces = false
+        self.bothScrollCollectionView.frame = rect
+        self.bothScrollCollectionView.delegateScrollView = self
+        self.bothScrollCollectionView.model = self.config
     }
     
     func setupMonth() {
@@ -88,18 +81,15 @@ class TPBothDirectionScrollCollectionView: UIView {
         let collectionViewSize = CGSize.init(width: 750, height: 40)
         let collectionViewOrigin = CGPoint.init(x: 260, y: 60)
         let rect = CGRect.init(origin: collectionViewOrigin, size: collectionViewSize)
-        schedules.frame = rect
-        schedules.delegate = self
-        schedules.dataSource = self
-        let nimbCellUsual = UINib(nibName: TPJournalScheduleIPADCell.idCell, bundle: nil)
-        schedules.register(nimbCellUsual, forCellWithReuseIdentifier: TPJournalScheduleIPADCell.idCell)
-        schedules.bounces = false
+        self.schedules.frame = rect
+        self.schedules.delegateScrollView = self
+        self.schedules.setSchedulesItems(items: self.config.schedulesItems)
     }
 
     func setupTableView(){
         tableView.delegate = self as UITableViewDelegate
         tableView.dataSource = self as UITableViewDataSource
-        let rect = CGRect.init(x: 0, y: 0, width: 250, height: numberOfRows * 100)
+        let rect = CGRect.init(x: 0, y: 0, width: 250, height: config.students.count * 100)
         tableView.frame = rect
     }
 }
@@ -111,6 +101,7 @@ extension TPBothDirectionScrollCollectionView: UICollectionViewDelegate {
                 cell.backgroundColor = UIColor.yellow
                 if self.journalCelldelegate != nil {
                     self.journalCelldelegate?.didTapJournalCell(cell: cell)
+                    print("\(indexPath.row / self.config.students.count)")
                 }
             } else if let cell = collectionView.cellForItem(at: indexPath) as? TPJournalScheduleIPADCell{
                 if self.scheduleCelldelegate != nil {
@@ -132,15 +123,12 @@ extension TPBothDirectionScrollCollectionView: UICollectionViewDelegate {
 
 extension TPBothDirectionScrollCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let items = self.schedulesItems else {
-            return 0
-        }
         if collectionView == bothScrollCollectionView {
-            return numberOfRows * items.count
+            return config.students.count * self.config.schedulesItems.count
         }  else if collectionView == months {
-            return items.count / 3
+            return self.config.schedulesItems.count / 3
         } else {
-            return items.count
+            return self.config.schedulesItems.count
         }
     }
     
@@ -167,14 +155,7 @@ extension TPBothDirectionScrollCollectionView: UICollectionViewDelegateFlowLayou
     //высота и шырина ячейки
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var size: CGSize
-        if collectionView == bothScrollCollectionView {
-            size = CGSize.init(width: 200, height: 100)
-        } else if collectionView == schedules {
-            size = CGSize.init(width: 200, height: 25)
-        } else {
-            
-            size = CGSize.init(width: (200 + 1) * 3, height: 25)
-        }
+        size = CGSize.init(width: (200 + 1) * 3, height: 25)
         return size
     }
     
@@ -191,7 +172,7 @@ extension TPBothDirectionScrollCollectionView: UICollectionViewDelegateFlowLayou
 
 extension TPBothDirectionScrollCollectionView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfRows
+        return config.students.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -215,15 +196,28 @@ extension TPBothDirectionScrollCollectionView: UITableViewDataSource, UITableVie
 extension TPBothDirectionScrollCollectionView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == bothScrollCollectionView {
-            schedules.contentOffset = bothScrollCollectionView.contentOffset
-            months.contentOffset = bothScrollCollectionView.contentOffset
-        } else if scrollView == schedules {
-            bothScrollCollectionView.contentOffset = schedules.contentOffset
-            months.contentOffset = schedules.contentOffset
+            schedules.contentOffset = scrollView.contentOffset
+            months.contentOffset = scrollView.contentOffset
         } else {
-            bothScrollCollectionView.contentOffset = months.contentOffset
-            schedules.contentOffset = months.contentOffset
+            bothScrollCollectionView.contentOffset = scrollView.contentOffset
+            schedules.contentOffset = scrollView.contentOffset
 
         }
     }
+}
+
+extension TPBothDirectionScrollCollectionView: TPSchedulesCollectionViewScrollDelegate {
+    func schedulesScrollViewDidScroll(_ scrollView: UIScrollView) {
+        bothScrollCollectionView.contentOffset = scrollView.contentOffset
+        months.contentOffset = scrollView.contentOffset
+    }
+
+}
+
+extension TPBothDirectionScrollCollectionView: NormalMarkCollectionViewScrollDelegate {
+    func normalMarksScrollViewDidScroll(_ scrollView: UIScrollView) {
+        schedules.contentOffset = scrollView.contentOffset
+        months.contentOffset = scrollView.contentOffset
+    }
+    
 }

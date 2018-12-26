@@ -15,6 +15,8 @@
 		E0135FD2215CCC3E006EA77F /* TrainingProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0135FD1215CCC3E006EA77F /* TrainingProjectTests.swift */; };
 		E0135FDD215CCC3E006EA77F /* TrainingProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0135FDC215CCC3E006EA77F /* TrainingProjectUITests.swift */; };
 		E02E7F3721C9269700291360 /* TPSchedulesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02E7F3621C9269700291360 /* TPSchedulesCollectionView.swift */; };
+		E0473FC521D39DEF0034C244 /* NormalMarkCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0473FC421D39DEF0034C244 /* NormalMarkCollectionView.swift */; };
+		E0473FC821D3A0D40034C244 /* JournalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0473FC721D3A0D40034C244 /* JournalConfiguration.swift */; };
 		E0A9FEA22164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */; };
 		E0A9FEA52164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */; };
 		E0A9FEA72164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */; };
@@ -62,6 +64,8 @@
 		E0135FDC215CCC3E006EA77F /* TrainingProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingProjectUITests.swift; sourceTree = "<group>"; };
 		E0135FDE215CCC3E006EA77F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E02E7F3621C9269700291360 /* TPSchedulesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPSchedulesCollectionView.swift; sourceTree = "<group>"; };
+		E0473FC421D39DEF0034C244 /* NormalMarkCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalMarkCollectionView.swift; sourceTree = "<group>"; };
+		E0473FC721D3A0D40034C244 /* JournalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalConfiguration.swift; sourceTree = "<group>"; };
 		E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPBothDirectionScrollCollectionViewContorller.swift; sourceTree = "<group>"; };
 		E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPBothDirectionScrollCollectionView.swift; sourceTree = "<group>"; };
 		E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TPBothDirectionScrollCollectionView.xib; sourceTree = "<group>"; };
@@ -154,9 +158,34 @@
 			path = TrainingProjectUITests;
 			sourceTree = "<group>";
 		};
+		E0473FC321D39DBA0034C244 /* NormalMark */ = {
+			isa = PBXGroup;
+			children = (
+				E0473FC421D39DEF0034C244 /* NormalMarkCollectionView.swift */,
+			);
+			path = NormalMark;
+			sourceTree = "<group>";
+		};
+		E0473FC621D3A07A0034C244 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E0473FC721D3A0D40034C244 /* JournalConfiguration.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E0473FC921D3C3670034C244 /* Schedules */ = {
+			isa = PBXGroup;
+			children = (
+				E02E7F3621C9269700291360 /* TPSchedulesCollectionView.swift */,
+			);
+			path = Schedules;
+			sourceTree = "<group>";
+		};
 		E0A9FEA02164BFA500115C65 /* BothDirectionScrollCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				E0473FC621D3A07A0034C244 /* Data */,
 				E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */,
 				E0A9FEA82166008000115C65 /* Cells */,
 				E0A9FEA32164CC3700115C65 /* Views */,
@@ -167,9 +196,10 @@
 		E0A9FEA32164CC3700115C65 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0473FC921D3C3670034C244 /* Schedules */,
+				E0473FC321D39DBA0034C244 /* NormalMark */,
 				E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */,
 				E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */,
-				E02E7F3621C9269700291360 /* TPSchedulesCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,9 +362,11 @@
 				E0A9FEAA216600D900115C65 /* TPJournalCell.swift in Sources */,
 				E0A9FEB021660A8900115C65 /* TP1stStyleCell.swift in Sources */,
 				E02E7F3721C9269700291360 /* TPSchedulesCollectionView.swift in Sources */,
+				E0473FC521D39DEF0034C244 /* NormalMarkCollectionView.swift in Sources */,
 				E0A9FEB221660AAA00115C65 /* TP2ndStypeCell.swift in Sources */,
 				E0A9FEA22164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift in Sources */,
 				E0C759B421C2A50200D76871 /* TPJournalScheduleIPADCellDelegate.swift in Sources */,
+				E0473FC821D3A0D40034C244 /* JournalConfiguration.swift in Sources */,
 				E0135FBF215CCC3D006EA77F /* ViewController.swift in Sources */,
 				E0C759B221C2A03500D76871 /* TPJournalScheduleIPADCell.swift in Sources */,
 				E0135FBD215CCC3D006EA77F /* AppDelegate.swift in Sources */,
