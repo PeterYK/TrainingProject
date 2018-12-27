@@ -64,7 +64,7 @@ extension TPSchedulesCollectionView: UICollectionViewDelegateFlowLayout {
     
     //высота и шырина ячейки
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize.init(width: 200, height: 25)
+        let size = CGSize.init(width: 200, height: 48)
         return size
     }
     

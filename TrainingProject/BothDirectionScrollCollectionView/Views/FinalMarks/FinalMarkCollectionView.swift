@@ -1,20 +1,20 @@
 //
-//  NormalMarkCollectionView.swift
+//  FinalMarkCollectionView.swift
 //  TrainingProject
 //
-//  Created by Petr Kozlov on 26/12/2018.
+//  Created by Petr Kozlov on 27/12/2018.
 //  Copyright © 2018 PeterYK. All rights reserved.
 //
 
 import UIKit
 
-protocol NormalMarkCollectionViewScrollDelegate: class {
-    func normalMarksScrollViewDidScroll(_ scrollView: UIScrollView)
+protocol FinalMarkCollectionViewScrollDelegate: class {
+    func finalMarksScrollViewDidScroll(_ scrollView: UIScrollView)
 }
 
-class NormalMarkCollectionView: UICollectionView {
+class FinalMarkCollectionView: UICollectionView {
     var model: JournalConfiguration?
-    weak var delegateScrollView: NormalMarkCollectionViewScrollDelegate?
+    weak var delegateScrollView: FinalMarkCollectionViewScrollDelegate?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -34,42 +34,42 @@ class NormalMarkCollectionView: UICollectionView {
     private func setupSelf() {
         self.dataSource = self
         self.delegate = self
-        let nibCell1st = UINib(nibName: TP1stStyleCell.idCell(), bundle: nil)
-        self.register(nibCell1st, forCellWithReuseIdentifier: TP1stStyleCell.idCell())
+        let nibCell1st = UINib(nibName: TP2ndStypeCell.idCell(), bundle: nil)
+        self.register(nibCell1st, forCellWithReuseIdentifier: TP2ndStypeCell.idCell())
         self.bounces = false
     }
 }
 
-extension NormalMarkCollectionView: UICollectionViewDelegate {
+extension FinalMarkCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("did select normalMark cell")
+        print("did select finalMark cell")
     }
 }
 
-extension NormalMarkCollectionView: UICollectionViewDataSource {
+extension FinalMarkCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let numberOfStudents = self.model?.students.count else {
             return 0
         }
-        guard let numberOfSchedules = self.model?.schedulesItems.count else {
+        guard let numberOfPeriods = self.model?.periods.count else {
             return 0
         }
-        return numberOfStudents * numberOfSchedules
+        return numberOfStudents * (numberOfPeriods + 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TP1stStyleCell.idCell(), for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TP2ndStypeCell.idCell(), for: indexPath)
         cell.backgroundColor = UIColor.purple
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension NormalMarkCollectionView: UICollectionViewDelegateFlowLayout {
+extension FinalMarkCollectionView: UICollectionViewDelegateFlowLayout {
     
     //высота и шырина ячейки
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       let size = CGSize.init(width: 200, height: 99)
+        let size = CGSize.init(width: 200, height: 98)
         return size
     }
     
@@ -84,8 +84,8 @@ extension NormalMarkCollectionView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension NormalMarkCollectionView: UIScrollViewDelegate {
+extension FinalMarkCollectionView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.delegateScrollView?.normalMarksScrollViewDidScroll(scrollView)
+        self.delegateScrollView?.finalMarksScrollViewDidScroll(scrollView)
     }
 }

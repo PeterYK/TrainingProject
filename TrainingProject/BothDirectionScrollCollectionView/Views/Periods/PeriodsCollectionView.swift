@@ -1,20 +1,20 @@
 //
-//  NormalMarkCollectionView.swift
+//  PeriodsCollectionView.swift
 //  TrainingProject
 //
-//  Created by Petr Kozlov on 26/12/2018.
+//  Created by Petr Kozlov on 27/12/2018.
 //  Copyright © 2018 PeterYK. All rights reserved.
 //
 
 import UIKit
 
-protocol NormalMarkCollectionViewScrollDelegate: class {
-    func normalMarksScrollViewDidScroll(_ scrollView: UIScrollView)
+protocol PeriodsCollectionViewScrollDelegate: class {
+    func periodsScrollViewDidScroll(_ scrollView: UIScrollView)
 }
 
-class NormalMarkCollectionView: UICollectionView {
-    var model: JournalConfiguration?
-    weak var delegateScrollView: NormalMarkCollectionViewScrollDelegate?
+class PeriodsCollectionView: UICollectionView {
+    var schedulesItems: [Int]?
+    weak var delegateScrollView: PeriodsCollectionViewScrollDelegate?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -26,50 +26,45 @@ class NormalMarkCollectionView: UICollectionView {
         setupSelf()
     }
     
-    public func setModel(aModel: JournalConfiguration) {
-        self.model = aModel
-        self.reloadData()
+    func setSchedulesItems(items: [Int]) {
+        self.schedulesItems = items
     }
-    
     private func setupSelf() {
         self.dataSource = self
         self.delegate = self
-        let nibCell1st = UINib(nibName: TP1stStyleCell.idCell(), bundle: nil)
-        self.register(nibCell1st, forCellWithReuseIdentifier: TP1stStyleCell.idCell())
+        let nimbCellUsual = UINib(nibName: TPJournalScheduleIPADCell.idCell, bundle: nil)
+        self.register(nimbCellUsual, forCellWithReuseIdentifier: TPJournalScheduleIPADCell.idCell)
         self.bounces = false
     }
 }
 
-extension NormalMarkCollectionView: UICollectionViewDelegate {
+extension PeriodsCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("did select normalMark cell")
+        print("did select schedule item")
     }
 }
 
-extension NormalMarkCollectionView: UICollectionViewDataSource {
+extension PeriodsCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let numberOfStudents = self.model?.students.count else {
+        guard let numberOfItems = self.schedulesItems?.count else {
             return 0
         }
-        guard let numberOfSchedules = self.model?.schedulesItems.count else {
-            return 0
-        }
-        return numberOfStudents * numberOfSchedules
+        return numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TP1stStyleCell.idCell(), for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TPJournalScheduleIPADCell.idCell, for: indexPath)
         cell.backgroundColor = UIColor.purple
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension NormalMarkCollectionView: UICollectionViewDelegateFlowLayout {
+extension PeriodsCollectionView: UICollectionViewDelegateFlowLayout {
     
     //высота и шырина ячейки
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       let size = CGSize.init(width: 200, height: 99)
+        let size = CGSize.init(width: 200, height: 48)
         return size
     }
     
@@ -84,8 +79,8 @@ extension NormalMarkCollectionView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension NormalMarkCollectionView: UIScrollViewDelegate {
+extension PeriodsCollectionView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.delegateScrollView?.normalMarksScrollViewDidScroll(scrollView)
+        self.delegateScrollView?.periodsScrollViewDidScroll(scrollView)
     }
 }

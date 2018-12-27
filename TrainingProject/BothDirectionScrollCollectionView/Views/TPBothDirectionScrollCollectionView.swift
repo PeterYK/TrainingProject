@@ -17,7 +17,10 @@ class TPBothDirectionScrollCollectionView: UIView {
     @IBOutlet weak var schedules: TPSchedulesCollectionView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentHeight: NSLayoutConstraint!
-
+    @IBOutlet weak var finalMarksCollectionView: FinalMarkCollectionView!
+    @IBOutlet weak var periodsCollectionView: UICollectionView!
+    @IBOutlet weak var periodsHeaderItemsCollectionView: PeriodsHeaderItemsCollectionView!
+    
     weak var journalCelldelegate:TPJournalCellDelegate?
     weak var scheduleCelldelegate:TPJournalScheduleIPADCellDelegate?
     
@@ -47,6 +50,9 @@ class TPBothDirectionScrollCollectionView: UIView {
         setupMonth()
         setupSchedules()
         setupBothScrollCollectionView()
+        setupFinalMarksCollectionView()
+        setupPeriods()
+        setupPeriodsHeadersItems()
         self.addSubview(view)
     }
     
@@ -57,7 +63,7 @@ class TPBothDirectionScrollCollectionView: UIView {
         contentHeight.constant = scrollView.contentSize.height
     }
     
-    func setupBothScrollCollectionView() {
+    private func setupBothScrollCollectionView() {
         let collectionViewSize = scrollView.contentSize
         let collectionViewOrigin = CGPoint.init(x: 250, y: 0)
         let rect = CGRect.init(origin: collectionViewOrigin, size: collectionViewSize)
@@ -66,15 +72,25 @@ class TPBothDirectionScrollCollectionView: UIView {
         self.bothScrollCollectionView.model = self.config
     }
     
+    private func setupFinalMarksCollectionView() {
+        let collectionViewSize = scrollView.contentSize
+        let collectionViewOrigin = CGPoint.init(x: 250, y: 0)
+        let rect = CGRect.init(origin: collectionViewOrigin, size: collectionViewSize)
+        self.finalMarksCollectionView.frame = rect
+        self.finalMarksCollectionView.delegateScrollView = self
+        self.finalMarksCollectionView.model = self.config
+        self.finalMarksCollectionView.isHidden = true
+    }
+
     func setupMonth() {
         let collectionViewSize = CGSize.init(width: 750, height: 40)
         let collectionViewOrigin = CGPoint.init(x: 260, y: 10)
         let rect = CGRect.init(origin: collectionViewOrigin, size: collectionViewSize)
-        months.frame = rect
-        months.delegate = self as UICollectionViewDelegate
-        months.dataSource = self as UICollectionViewDataSource
-        months.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "monthCell")
-        months.bounces = false
+        self.months.frame = rect
+        self.months.delegate = self as UICollectionViewDelegate
+        self.months.dataSource = self as UICollectionViewDataSource
+        self.months.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "monthCell")
+        self.months.bounces = false
     }
     
     func setupSchedules() {
@@ -87,11 +103,23 @@ class TPBothDirectionScrollCollectionView: UIView {
     }
 
     func setupTableView(){
-        tableView.delegate = self as UITableViewDelegate
-        tableView.dataSource = self as UITableViewDataSource
+        self.tableView.delegate = self as UITableViewDelegate
+        self.tableView.dataSource = self as UITableViewDataSource
         let rect = CGRect.init(x: 0, y: 0, width: 250, height: config.students.count * 100)
-        tableView.frame = rect
+        self.tableView.frame = rect
     }
+    
+    private func setupPeriods() {
+        self.periodsCollectionView.isHidden = true
+    }
+    
+    private func setupPeriodsHeadersItems() {
+        let collectionViewSize = CGSize.init(width: 750, height: 40)
+        let collectionViewOrigin = CGPoint.init(x: 260, y: 60)
+        let rect = CGRect.init(origin: collectionViewOrigin, size: collectionViewSize)
+        self.periodsHeaderItemsCollectionView.frame = rect
+        self.periodsHeaderItemsCollectionView.delegateScrollView = self
+        self.periodsHeaderItemsCollectionView.setPeriods(items: self.config.periods)    }
 }
 
 extension TPBothDirectionScrollCollectionView: UICollectionViewDelegate {
@@ -155,7 +183,7 @@ extension TPBothDirectionScrollCollectionView: UICollectionViewDelegateFlowLayou
     //высота и шырина ячейки
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var size: CGSize
-        size = CGSize.init(width: (200 + 1) * 3, height: 25)
+        size = CGSize.init(width: (200 + 1) * 3, height: 66)
         return size
     }
     
@@ -201,7 +229,6 @@ extension TPBothDirectionScrollCollectionView: UIScrollViewDelegate {
         } else {
             bothScrollCollectionView.contentOffset = scrollView.contentOffset
             schedules.contentOffset = scrollView.contentOffset
-
         }
     }
 }
@@ -211,7 +238,6 @@ extension TPBothDirectionScrollCollectionView: TPSchedulesCollectionViewScrollDe
         bothScrollCollectionView.contentOffset = scrollView.contentOffset
         months.contentOffset = scrollView.contentOffset
     }
-
 }
 
 extension TPBothDirectionScrollCollectionView: NormalMarkCollectionViewScrollDelegate {
@@ -219,5 +245,16 @@ extension TPBothDirectionScrollCollectionView: NormalMarkCollectionViewScrollDel
         schedules.contentOffset = scrollView.contentOffset
         months.contentOffset = scrollView.contentOffset
     }
-    
+}
+
+extension TPBothDirectionScrollCollectionView: FinalMarkCollectionViewScrollDelegate {
+    func finalMarksScrollViewDidScroll(_ scrollView: UIScrollView) {
+        periodsHeaderItemsCollectionView.contentOffset = scrollView.contentOffset
+    }
+}
+
+extension TPBothDirectionScrollCollectionView: PeriodsHeaderItemsCollectionViewScrollDelegate {
+    func periodsHeaderItemsScrollViewDidScroll(_ scrollView: UIScrollView) {
+        finalMarksCollectionView.contentOffset = scrollView.contentOffset
+    }
 }

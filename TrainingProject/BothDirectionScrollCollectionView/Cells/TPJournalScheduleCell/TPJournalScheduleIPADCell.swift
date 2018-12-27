@@ -6,7 +6,6 @@
 //  Copyright © 2018 PeterYK. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class TPJournalScheduleIPADCell: UICollectionViewCell {

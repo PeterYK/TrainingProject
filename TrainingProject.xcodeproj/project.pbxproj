@@ -17,6 +17,11 @@
 		E02E7F3721C9269700291360 /* TPSchedulesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02E7F3621C9269700291360 /* TPSchedulesCollectionView.swift */; };
 		E0473FC521D39DEF0034C244 /* NormalMarkCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0473FC421D39DEF0034C244 /* NormalMarkCollectionView.swift */; };
 		E0473FC821D3A0D40034C244 /* JournalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0473FC721D3A0D40034C244 /* JournalConfiguration.swift */; };
+		E0473FCD21D4C2980034C244 /* FinalMarkCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0473FCC21D4C2980034C244 /* FinalMarkCollectionView.swift */; };
+		E0473FD021D501BC0034C244 /* PeriodsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0473FCF21D501BC0034C244 /* PeriodsCollectionView.swift */; };
+		E0473FD421D51A0E0034C244 /* PeriodsHeaderItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0473FD321D51A0E0034C244 /* PeriodsHeaderItemCell.swift */; };
+		E0473FD621D51A5D0034C244 /* PeriodsHeaderItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0473FD521D51A5D0034C244 /* PeriodsHeaderItemCell.xib */; };
+		E0473FD921D51E690034C244 /* PeriodsHeaderItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0473FD821D51E690034C244 /* PeriodsHeaderItemsCollectionView.swift */; };
 		E0A9FEA22164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */; };
 		E0A9FEA52164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */; };
 		E0A9FEA72164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */; };
@@ -66,6 +71,11 @@
 		E02E7F3621C9269700291360 /* TPSchedulesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPSchedulesCollectionView.swift; sourceTree = "<group>"; };
 		E0473FC421D39DEF0034C244 /* NormalMarkCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalMarkCollectionView.swift; sourceTree = "<group>"; };
 		E0473FC721D3A0D40034C244 /* JournalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalConfiguration.swift; sourceTree = "<group>"; };
+		E0473FCC21D4C2980034C244 /* FinalMarkCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalMarkCollectionView.swift; sourceTree = "<group>"; };
+		E0473FCF21D501BC0034C244 /* PeriodsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodsCollectionView.swift; sourceTree = "<group>"; };
+		E0473FD321D51A0E0034C244 /* PeriodsHeaderItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodsHeaderItemCell.swift; sourceTree = "<group>"; };
+		E0473FD521D51A5D0034C244 /* PeriodsHeaderItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeriodsHeaderItemCell.xib; sourceTree = "<group>"; };
+		E0473FD821D51E690034C244 /* PeriodsHeaderItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodsHeaderItemsCollectionView.swift; sourceTree = "<group>"; };
 		E0A9FEA12164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPBothDirectionScrollCollectionViewContorller.swift; sourceTree = "<group>"; };
 		E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPBothDirectionScrollCollectionView.swift; sourceTree = "<group>"; };
 		E0A9FEA62164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TPBothDirectionScrollCollectionView.xib; sourceTree = "<group>"; };
@@ -182,6 +192,49 @@
 			path = Schedules;
 			sourceTree = "<group>";
 		};
+		E0473FCB21D4C27C0034C244 /* FinalMarks */ = {
+			isa = PBXGroup;
+			children = (
+				E0473FCC21D4C2980034C244 /* FinalMarkCollectionView.swift */,
+			);
+			path = FinalMarks;
+			sourceTree = "<group>";
+		};
+		E0473FCE21D501A30034C244 /* Periods */ = {
+			isa = PBXGroup;
+			children = (
+				E0473FCF21D501BC0034C244 /* PeriodsCollectionView.swift */,
+			);
+			path = Periods;
+			sourceTree = "<group>";
+		};
+		E0473FD121D519110034C244 /* TPJournalScheduleCell */ = {
+			isa = PBXGroup;
+			children = (
+				E0C759B121C2A03500D76871 /* TPJournalScheduleIPADCell.swift */,
+				E0C759B521C2AAD400D76871 /* TPJournalScheduleIPADCell.xib */,
+				E0C759B321C2A50200D76871 /* TPJournalScheduleIPADCellDelegate.swift */,
+			);
+			path = TPJournalScheduleCell;
+			sourceTree = "<group>";
+		};
+		E0473FD221D519790034C244 /* PeriodsHeaderItem */ = {
+			isa = PBXGroup;
+			children = (
+				E0473FD321D51A0E0034C244 /* PeriodsHeaderItemCell.swift */,
+				E0473FD521D51A5D0034C244 /* PeriodsHeaderItemCell.xib */,
+			);
+			path = PeriodsHeaderItem;
+			sourceTree = "<group>";
+		};
+		E0473FD721D51E450034C244 /* PeriodsHeaderItem */ = {
+			isa = PBXGroup;
+			children = (
+				E0473FD821D51E690034C244 /* PeriodsHeaderItemsCollectionView.swift */,
+			);
+			path = PeriodsHeaderItem;
+			sourceTree = "<group>";
+		};
 		E0A9FEA02164BFA500115C65 /* BothDirectionScrollCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +249,9 @@
 		E0A9FEA32164CC3700115C65 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0473FD721D51E450034C244 /* PeriodsHeaderItem */,
+				E0473FCE21D501A30034C244 /* Periods */,
+				E0473FCB21D4C27C0034C244 /* FinalMarks */,
 				E0473FC921D3C3670034C244 /* Schedules */,
 				E0473FC321D39DBA0034C244 /* NormalMark */,
 				E0A9FEA42164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift */,
@@ -207,6 +263,8 @@
 		E0A9FEA82166008000115C65 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E0473FD221D519790034C244 /* PeriodsHeaderItem */,
+				E0473FD121D519110034C244 /* TPJournalScheduleCell */,
 				E0A9FEA9216600D900115C65 /* TPJournalCell.swift */,
 				E0A9FEAB2166013300115C65 /* TPJournalCellProtocol.swift */,
 				E0A9FEAD2166051A00115C65 /* TPJournalCellDelegate.swift */,
@@ -214,9 +272,6 @@
 				E0A9FEB521661A6500115C65 /* TP1stStyleCell.xib */,
 				E0A9FEB121660AAA00115C65 /* TP2ndStypeCell.swift */,
 				E0A9FEB321660E8500115C65 /* TP2ndStypeCell.xib */,
-				E0C759B121C2A03500D76871 /* TPJournalScheduleIPADCell.swift */,
-				E0C759B521C2AAD400D76871 /* TPJournalScheduleIPADCell.xib */,
-				E0C759B321C2A50200D76871 /* TPJournalScheduleIPADCellDelegate.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -325,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0473FD621D51A5D0034C244 /* PeriodsHeaderItemCell.xib in Resources */,
 				E0A9FEA72164CF6F00115C65 /* TPBothDirectionScrollCollectionView.xib in Resources */,
 				E0135FC7215CCC3E006EA77F /* LaunchScreen.storyboard in Resources */,
 				E0A9FEB621661A6500115C65 /* TP1stStyleCell.xib in Resources */,
@@ -356,15 +412,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0473FCD21D4C2980034C244 /* FinalMarkCollectionView.swift in Sources */,
 				E0A9FEA52164CC6800115C65 /* TPBothDirectionScrollCollectionView.swift in Sources */,
 				E0A9FEAC2166013300115C65 /* TPJournalCellProtocol.swift in Sources */,
+				E0473FD021D501BC0034C244 /* PeriodsCollectionView.swift in Sources */,
 				E0A9FEAE2166051A00115C65 /* TPJournalCellDelegate.swift in Sources */,
 				E0A9FEAA216600D900115C65 /* TPJournalCell.swift in Sources */,
 				E0A9FEB021660A8900115C65 /* TP1stStyleCell.swift in Sources */,
 				E02E7F3721C9269700291360 /* TPSchedulesCollectionView.swift in Sources */,
 				E0473FC521D39DEF0034C244 /* NormalMarkCollectionView.swift in Sources */,
+				E0473FD921D51E690034C244 /* PeriodsHeaderItemsCollectionView.swift in Sources */,
 				E0A9FEB221660AAA00115C65 /* TP2ndStypeCell.swift in Sources */,
 				E0A9FEA22164C8F900115C65 /* TPBothDirectionScrollCollectionViewContorller.swift in Sources */,
+				E0473FD421D51A0E0034C244 /* PeriodsHeaderItemCell.swift in Sources */,
 				E0C759B421C2A50200D76871 /* TPJournalScheduleIPADCellDelegate.swift in Sources */,
 				E0473FC821D3A0D40034C244 /* JournalConfiguration.swift in Sources */,
 				E0135FBF215CCC3D006EA77F /* ViewController.swift in Sources */,
